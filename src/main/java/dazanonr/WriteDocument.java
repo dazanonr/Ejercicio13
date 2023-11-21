@@ -12,14 +12,16 @@ public class WriteDocument implements Runnable{
 
     public void run() {
         try {
-            File file = new File("C:\\Users\\dazanonr\\Documents\\CityData\\city_data.txt");
-            Writer writer = new FileWriter(file,true);
-            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+            File file = new File("C:\\Users\\dazanonr\\Documents\\Citydata\\city_data.txt");
+            BufferedWriter bufferedWriter = new BufferedWriter (new FileWriter(file,true));
             System.out.println(cityData.toString());
-            bufferedWriter.newLine();
             bufferedWriter.write(cityData.toString());
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        //BufferedWriter depende del FileWriter
+
     }
 }
