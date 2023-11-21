@@ -13,9 +13,10 @@ public class WriteDocument implements Runnable{
     public void run() {
         try {
             File file = new File("C:\\Users\\dazanonr\\Documents\\Citydata\\city_data.txt");
-            BufferedWriter bufferedWriter = new BufferedWriter (new FileWriter(file,true));
+            BufferedWriter bufferedWriter = new BufferedWriter (new FileWriter(file, true));
             System.out.println(cityData.toString());
             bufferedWriter.write(cityData.toString());
+            bufferedWriter.close();
 
         } catch (IOException e) {
             throw new RuntimeException(e);
